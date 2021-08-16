@@ -1,6 +1,9 @@
 class ProgressBars {
-    constructor(data) {
+    constructor(selector, data) {
+        this.selector = selector
         this.data = data
+
+        this.render();
     }
 
     render() {
@@ -19,7 +22,7 @@ class ProgressBars {
                     </div>`;
         }
         
-        const DOM = document.querySelector('.left-column');
+        const DOM = document.querySelector(this.selector);
         DOM.innerHTML += HTML; 
     }
 }
